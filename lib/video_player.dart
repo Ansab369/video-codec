@@ -51,7 +51,7 @@ class _VideoPlayervideoState extends State<VideoPlayervideo> {
     //!   convert 4k video to 720
     // final String videoPath = widget.filePath;
     // final String outputPath = '/storage/emulated/0/Download/testvideo4k.mp4';
-    final String outputPath = '${widget.outPath}/test27.mp4';
+    final String outputPath = '${widget.outPath}/test31.mp4';
     // final String resolution = '1520x720';966666666+
 
     convertVideoToSupportedResolution(widget.filePath, outputPath);
@@ -178,8 +178,10 @@ Future<void> convertVideoToSupportedResolution(
   }
   // Set the FFmpeg command
 
+  //! converting 12k to 4k
+
   final ffmpegCommand =
-      '-i $inputPath -vf "scale=2048:1080" -c:a copy $outputPath';
+      '-i $inputPath -vf "scale=3840x2160" -c:a copy $outputPath';
   // final ffmpegCommand3 =
   //     '-i $inputPath -vf "scale=1520x720" -c:a copy $outputPath';
 
